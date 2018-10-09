@@ -17,16 +17,16 @@ $router->get('/', function () use ($router) {
 
 
 
-Route::group(['prefix'=>'api/v1'],function(){
+$router->group(['prefix'=>'api/v1'],function() use ($router){
 
-	Route::get('/products','ProductController@index');
+	$router->get('/products','ProductController@index');
 
-	Route::post('/products','ProductController@store');
+	$router->post('/products','ProductController@store');
 
-	Route::get('/products/{id}','ProductController@show');
+	$router->get('/products/{id}','ProductController@show');
 
-	Route::put('products/{id}','ProductController@update');
+	$router->put('products/{id}','ProductController@update');
 
-	Route::delete('products/{id}','ProductController@destroy');
+	$router->delete('products/{id}','ProductController@destroy');
 
 });
